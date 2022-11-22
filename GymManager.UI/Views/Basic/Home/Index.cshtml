@@ -1,0 +1,195 @@
+﻿@inject IConfiguration configuration
+
+@{
+    var templateKey = configuration.GetSection("TemplateKey").Value;
+    Layout = $"/Views/{templateKey}/Shared/_LayoutMain.cshtml";
+    ViewData["Title"] = "Strona Główna";
+}
+
+<vc:main-carousel priority="2" />
+
+<div class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="main-description p-5">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 mt-5 secondary-description">
+
+        <div class="col">
+            <div class="card border-0 m-5">
+                <img src="~/images/card-gym.png" class="card-img-top" alt="card-gym" >
+                <div class="card-body">
+                    <h4 class="card-title">Siłownia</h4>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary btn-sm">
+                        <i class="fas fa-solid fa-angles-right"></i>Zobacz
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+                <img src="~/images/card-fitness.png" class="card-img-top" alt="card-gym" >
+                <div class="card-body">
+                    <h4 class="card-title">Zajęcia Fitness</h4>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary btn-sm">
+                        <i class="fas fa-solid fa-angles-right"></i>Zobacz
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+                <img src="~/images/card-crossfit.png" class="card-img-top" alt="card-gym" >
+                <div class="card-body">
+                    <h4 class="card-title">Crossfit</h4>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary btn-sm">
+                        <i class="fas fa-solid fa-angles-right"></i>Zobacz
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+                <img src="~/images/card-massage.png" class="card-img-top" alt="card-gym" >
+                <div class="card-body">
+                    <h4 class="card-title">Masaże</h4>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary btn-sm">
+                        <i class="fas fa-solid fa-angles-right"></i>Zobacz
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+                <img src="~/images/card-pool.png" class="card-img-top" alt="card-gym" >
+                <div class="card-body">
+                    <h4 class="card-title">Basen</h4>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary btn-sm">
+                        <i class="fas fa-solid fa-angles-right"></i>Zobacz
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+                <img src="~/images/card-trainer.png" class="card-img-top" alt="card-gym" >
+                <div class="card-body">
+                    <h4 class="card-title">Opieka Trenera Personalnego</h4>
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary btn-sm">
+                        <i class="fas fa-solid fa-angles-right"></i>Zobacz
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="bg-light">
+    <div class="container">
+        <div class="row">
+           <figure class="text-center p-5">
+               <blockquote class=blockquote>
+                   <p>
+                       It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                   </p>
+               </blockquote>
+               <figcaption class="blockquote-footer mt-3 secondary-description">
+                   Someone famous in <cite title="Source Title">Source Title</cite>
+               </figcaption>
+           </figure>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2">
+
+        <div class="col">
+            <div class="card border-0 m-5">
+                <div class="card-body text-center secondary-description">
+                    <h2 class="card-title">Pojedyńcza Wejściówka</h2>
+                    <p class="card-text m-4">
+                        Możesz korzystać ze wszystkich usług przez 24 godziny. W skład pakietu wchodzi:
+                    </p>
+                    <ul class="no-decoration">
+                        <li>✅ Usługa 1,</li>
+                        <li>✅ Usługa 2,</li>
+                        <li>✅ Usługa 3,</li>
+                    </ul>
+                    <a href="#" class="btn btn-danger btn-lg mt-2">
+                        <i class="fas fa-solid fa-cart-shopping"></i>Kup Wejściówkę
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 m-5">
+                <div class="card-body text-center secondary-description">
+                    <h2 class="card-title">Miesięczny Karnet</h2>
+                    <p class="card-text m-4">
+                        Miesięczny dostęp do wszystkich usług. W skład pakietu wchodzi:
+                    </p>
+                    <ul class="no-decoration">
+                        <li>✅ Usługa 1,</li>
+                        <li>✅ Usługa 2,</li>
+                        <li>✅ Usługa 3,</li>
+                        <li>✅ Usługa 4,</li>
+                        <li>✅ Usługa 5,</li>
+                    </ul>
+                    <a href="#" class="btn btn-danger btn-lg mt-2">
+                        <i class="fas fa-solid fa-cart-shopping"></i>Kup Karnet
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="bg-light">
+    <div class="container">
+        <div class="row">
+           <figure class="text-center p-5">
+               <blockquote class=blockquote>
+                   <p>
+                       It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                   </p>
+               </blockquote>
+               <figcaption class="blockquote-footer mt-3 secondary-description">
+                   Someone famous in <cite title="Source Title">Source Title</cite>
+               </figcaption>
+           </figure>
+        </div>
+    </div>
+</div>
