@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GymManager</title>
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GymManager.UI.styles.css" asp-append-version="true" />
+
+    @await RenderSectionAsync("Styles", required: false)
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="mt-4 mb-4">
+                <div class="row">
+                    <a class="navbar-brand" asp-controller="Home" asp-action="Index" >
+                        <img src="~/images/gym-logo.jpg" alt="strona główna" width="270" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-dark navbar-expand-sm navbar-toggleable-sm bg-danger mt-3 mb-3 main-navbar">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon text-white"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end main-navbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Contact">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="border-top bg-danger footer text-white">
+        <div class="container text-center">
+            &copy; @DateTime.Now.Year - GymManager - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-white">Polityka Prywatności</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery.cookie/jquery.cookie.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <div class="privacy-police-info" style="display: none;">
+        Serwis wykorzystuje pliki cookies. Korzystając ze strony wyrażasz zgodę na wykorzystanie plików cookies.
+        <button onclick="closePrivacyPolice()" type="button" class="btn btn-light small mx-3 my-1 privacy-police-btn">
+            Ok, rozumiem
+        </button>
+    </div>
+
+    <script>
+        $(document).ready(function (){
+
+            if ($.cookie("privacyPolicy") !== "1")
+                $(".privacy-police-info").show();
+
+        });
+
+        function closePrivacyPolice() {
+            $(".privacy-police-info").hide();
+            $.cookie("privacyPolicy", "1", { path: '/', expires: 365 });
+        }
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
