@@ -26,20 +26,6 @@
     },
     {
       "provider": "jsdelivr",
-      "library": "cldr-core@42.0.0",
-      "destination": "wwwroot/lib/cldr-core/",
-      "files": [
-        "supplemental/likelySubtags.json",
-        "supplemental/numberingSystems.json",
-        "supplemental/ordinals.json",
-        "supplemental/plurals.json",
-        "supplemental/calendarData.json",
-        "supplemental/timeData.json",
-        "supplemental/weekData.json"
-      ]
-    },
-    {
-      "provider": "jsdelivr",
       "library": "cldr-dates-modern@42.0.0",
       "destination": "wwwroot/lib/cldr-dates-modern/",
       "files": [
@@ -66,6 +52,14 @@
       "destination": "wwwroot/lib/jquery.cookie/",
       "files": [
         "jquery.cookie.min.js"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "cldr-core@42.0.0",
+      "destination": "wwwroot/lib/cldr-core/",
+      "files": [
+        "supplemental/currencyData.json"
       ]
     }
   ]

@@ -1,4 +1,5 @@
-﻿using GymManager.Application.Common.Exceptions;
+﻿using AspNetCore.ReCaptcha;
+using GymManager.Application.Common.Exceptions;
 using GymManager.Application.Contacts.Command;
 using GymManager.Application.Tickets.Commands.AddTicket;
 using GymManager.Application.Tickets.Queries.GetTicketById;
@@ -32,6 +33,7 @@ namespace GymManager.UI.Controllers
             return View(new SendContactEmailCommand());
         }
 
+        [ValidateReCaptcha]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public async Task<IActionResult> Contact(SendContactEmailCommand command)
@@ -40,6 +42,7 @@ namespace GymManager.UI.Controllers
 
             if (!result.IsValid)
             {
+                ModelState.AddModelError("AntySpamResult", "Wypełnij pole ReCaptcha");
                 return View(command);
             }
 
